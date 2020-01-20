@@ -1,7 +1,8 @@
 const express = require('express');
 const app = express();
+const cors = require('cors');
 var fs = require('fs');
-
+app.use(cors());
 async function startpage(req, res, next) {
     res.send('Hello World');
 }
