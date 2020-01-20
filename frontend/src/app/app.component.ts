@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-
+import { Component, OnInit } from '@angular/core';
+import { MainserviceService } from './mainservice.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -10,6 +10,14 @@ export class AppComponent {
 
   changeTitle(){
     this.title = 'new frontend';
+  }
+  constructor(private mainService : MainserviceService){  }
+
+  ngOnInit(){
+    console.log("Inside");
+    this.mainService.getData().subscribe(data => {
+      console.log(data);
+    })
   }
 
 }
