@@ -16,6 +16,7 @@ export class AppComponent {
   ngOnInit(){
     console.log("Inside");
     this.mainService.getData().subscribe(data => {
+      console.log(data);
       this.mainService.data = data;
     });
   }
